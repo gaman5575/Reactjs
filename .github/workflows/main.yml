@@ -48,4 +48,4 @@ jobs:
   
       # Step 7: Run Docker container
       - name: Run Docker container
-        run: docker run -d -p 3000:3000 --name react-frontend  gaman5575/react-frontend
+        run: docker run -d -p 3000:80 --name react-frontend  gaman5575/react-frontend
