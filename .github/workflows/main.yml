@@ -30,7 +30,7 @@ jobs:
   
       # Step 4: Push Docker Image to Docker Hub
       - name: Pushing to Docker Hub Repo
-        run: docker push gaman5575/react-frontend:latest
+        run: docker push gaman5575/react-frontend:latest --build-arg REACT_APP_NODE_ENV='production' --build-arg REACT_APP_SERVER_BASE_URL='${{ secrets.REACT_APP_SERVER_BASE_URL }}'  .
   
     Deploy:
       needs: build
