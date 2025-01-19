@@ -26,11 +26,11 @@ jobs:
   
       # Step 3: Build Docker Image
       - name: Docker image build
-        run: docker build -t gaman5575/react-frontend .
+        run: docker build -t gaman5575/react-frontend --build-arg REACT_APP_NODE_ENV='production' --build-arg REACT_APP_SERVER_BASE_URL='${{ secrets.REACT_APP_SERVER_BASE_URL }}' .
   
       # Step 4: Push Docker Image to Docker Hub
       - name: Pushing to Docker Hub Repo
-        run: docker push gaman5575/react-frontend:latest --build-arg REACT_APP_NODE_ENV='production' --build-arg REACT_APP_SERVER_BASE_URL='${{ secrets.REACT_APP_SERVER_BASE_URL }}'  .
+        run: docker push gaman5575/react-frontend:latest 
   
     Deploy:
       needs: build
